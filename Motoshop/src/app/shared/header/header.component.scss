@@ -1,0 +1,108 @@
+@import "../../../assets/variables/colors";
+@import "../../../assets/variables/mixins";
+
+.header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    transition: all 0.5s;
+    &.scrolled {
+        background-color: $black;
+    }
+    .nav-other {
+        background-color: $black;
+        min-height: 40px;
+        width: 100%;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include mobile {
+                flex-direction: column;
+            }
+        }
+        .left {
+            display: flex;
+            align-items: center;
+        }
+        .right {
+            .langs {
+                display: flex;
+                align-items: center;
+                .language {
+                    display: block;
+                    cursor: pointer;
+                    margin: 0 5px;
+                    transition: all 0.5s;
+                    &.active {
+                        color: $yellow;
+                    }
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+    }
+    .nav {
+        &.show {
+            background: rgb(0, 0, 0);
+            background: linear-gradient(0deg, rgb(0 0 0) 0%, rgba(0, 0, 0, 0.7707676821) 40%, rgb(0, 0, 0) 100%);
+            .navbar-nav {
+                align-items: center;
+            }
+        }
+        .navbar {
+            .navbar-toggler {
+                .line {
+                    width: 50px;
+                    height: 4px;
+                    background-color: $yellow;
+                    display: block;
+                    margin-bottom: 4px;
+                }
+            }
+            .logo {
+                width: 150px;
+            }
+            .collapse {
+                flex-direction: row-reverse;
+            }
+            .nav-item {
+                margin-right: 20px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                .nav-link {
+                    position: relative;
+                    color: $white;
+                    &.active {
+                        .line {
+                            width: 100%;
+                        }
+                    }
+                    &:hover {
+                        .line {
+                            width: 100%;
+                        }
+                    }
+                    .line {
+                        position: absolute;
+                        bottom: 0;
+                        height: 4px;
+                        left: 0;
+                        width: 0;
+                        transition: all 0.5s;
+                        background-color: $yellow;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import '../../../assets/variables/colors';
+
+.footer {
+    background-color: $black;
+    padding: 12px 0;
+    .container {
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+    .copy {
+        color: $white;
+    }
+    .social {
+        .link {
+            filter: invert(1);
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+        }
+    }
+}

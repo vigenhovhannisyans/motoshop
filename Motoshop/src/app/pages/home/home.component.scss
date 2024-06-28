@@ -1,0 +1,102 @@
+
+@import '../../../assets/variables/colors';
+@import '../../../assets/variables/mixins';
+
+.home {
+    .video {
+        height: 100vh;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            background: $black-transparent;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+        .head-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .head-text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 80%;
+            .welcome {
+                color: $white;
+                font-size: 50px;
+                text-align: center;
+                line-height: 60px;
+                @include mobileSM {
+                    font-size: 25px;
+                }
+                
+                .shop {
+                    color: $yellow;
+                    font-weight: 600;
+                    
+                }
+            }
+            .about {
+                color: $white;
+                text-align: center;
+                font-size: 14px;
+                margin: 20px auto;
+                line-height: 31px;
+                @include mobileSM {
+                    text-align: justify;
+                }
+            }
+
+        }
+        .scroll {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            transform: translate(-50%, -60%);
+            left: 50%;
+            z-index: 1;
+            .scroll-text {
+                color: $white;
+            }
+            .scroll-img {
+                width: 50px;
+                height: 50px;
+                filter: invert(1);
+                animation-name: arrow;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+    .best {
+        padding-top: 100px;
+        padding-bottom: 40px;
+        .title {
+            text-align: center;
+            font-weight: 600;
+            font-size: 30px;
+            margin-bottom: 100px;
+        }
+       
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

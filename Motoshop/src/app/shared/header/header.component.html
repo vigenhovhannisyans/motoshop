@@ -1,0 +1,57 @@
+
+<div motScroll class="header">
+    <div class="nav-other">
+        <div class="container">
+            <div class="left">
+                <mot-info [iconName]="'phone'" [isWhite]="true">
+                    <span>+374 10 43 43 00</span>
+                </mot-info>
+                <mot-info [iconName]="'email'" [isWhite]="true">
+                    <span>info&#64;motoshop.am</span>
+                </mot-info>
+            </div>
+            <div class="middle">
+                <mot-info [iconName]="'room'" [isWhite]="true">
+                    <span>1/5 Davit-Bek St, Yerevan 0008</span>
+                </mot-info>
+            </div>
+            <div class="right">
+                <mot-info [iconName]="'language'" [isWhite]="true">
+                    <div class="langs">
+                        <span class="language active">ARM</span>
+                        &frasl;
+                        <span class="language">RUS</span>
+                        &frasl;
+                        <span class="language">ENG</span>
+                    </div>
+                  
+                </mot-info>
+            </div>
+        </div>
+    
+    </div>
+<div [class.show]="showNavbar" class="nav">
+    <nav class="navbar container navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img class="logo" src="../../../assets/images/logo.png" alt="">
+        </a>
+        <button (click)="toggleNavbar()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <div [class.show]="showNavbar" class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                @for (router of routers; track router.id) {
+                <li class="nav-item">
+                    <a [routerLink]="router.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link" href="#">{{router.title}}
+                    <span class="line"></span></a>
+                </li>
+                }
+            </ul>
+        </div>
+    </nav>
+</div>
+</div>
